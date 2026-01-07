@@ -11,3 +11,6 @@ Coding Fight is a gamified platform where users can:
 - Compete on leaderboards
 
 This is the **v1.0 Release** of the backend API.
+
+- [x] Initial Boilerplate
+- [X] Setup DB Connection
