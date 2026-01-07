@@ -5,11 +5,12 @@
   "license": "ISC",
   "author": "",
   "type": "module",
-  "main": "index.js",
+  "main": "dist/server.js",
   "scripts": {
     "dev": "node -r dotenv/config -r ts-node/register src/server.ts",
     "build": "tsc",
     "start": "node dist/server.js",
+    "postinstall": "prisma generate",
     "format": "prettier --write \"src/**/*.ts\"",
     "format:check": "prettier --check \"src/**/*.ts\"",
     "prisma:migrate": "prisma migrate dev",
