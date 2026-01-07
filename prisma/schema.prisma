@@ -1,0 +1,40 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum Difficulty {
+  EASY
+  MEDIUM
+  HARD
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String
+  username  String   @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("users")
+}
+
+model Problem {
+  id              String       @id @default(cuid())
+  title           String
+  description     String       @db.Text
+  difficulty      Difficulty
+  constraints     String?      @db.Text
+  timeLimit       Int?
+  memoryLimit     Int?
+  topics          String[]
+  acceptanceRate  Float        @default(0)
+  createdAt       DateTime     @default(now())
+  updatedAt       DateTime     @updatedAt
+
+  @@map("problems")
+}

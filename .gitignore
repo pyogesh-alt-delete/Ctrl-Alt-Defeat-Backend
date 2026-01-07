@@ -104,3 +104,4 @@ public/uploads/
 # Keep these files
 !.env.example
 !.gitkeep
+/src/generated/prisma
